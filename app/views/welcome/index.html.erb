@@ -1,0 +1,53 @@
+
+<div class="flexcontainer">
+
+<div class="header">
+	<%= image_tag('TOA_logo.png', :class => "logo") %>
+</div>
+
+<div class="social">
+		<ul class="social-items">
+		<li>
+			<iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:4DKD9ybSnAQVYkE8L5sJXk&size=basic&theme=light&show-count=0" width="95" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+		</li>
+			<li><a href="#">
+						<i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+					</a>
+			</li>
+
+			<li><a href="#">
+						<i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+					</a>
+			</li>
+		</ul>
+</div>
+
+<div class="main-content">
+	<div class="pictures">
+		<% @recent_media_items.each do |media| %>
+			<div class="thumbnail">
+				<img src="<%= media.images.standard_resolution.url%>">
+				<div class="caption">
+					<% unless media.caption.blank? %>
+						<div>
+							<p class="insta-caption"><%= media.caption.text %></p>
+							<small>
+								<%= time_ago_in_words(Time.at(media.caption.created_time.to_i)) %>
+							</small>
+						</div>
+					<% else %>
+						<p class="insta-caption"> </p>
+					<% end %>
+				</div>
+			</div>
+		<% end%>
+	</div>
+
+	<div class="spotify">
+			<div class="albumn-link">
+			<iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A4pcId5FbaIfoNEw32SYn9h&theme=white" width="550" height="400" frameborder="0" allowtransparency="true"></iframe>
+			</div>
+	</div>
+</div>
+
+

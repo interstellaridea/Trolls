@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+	height: 100%;
+	background-color: #FCFCFC;
+	color: #000;
+}
+
+.flexcontainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	align-self: center;
+}
+
+.logo {
+	height: 400px;
+	border: 5px solid blue;
+}
+
+.main-content {
+	border: 2px solid red;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
+	align-items: baseline;
+
+}
+
+.pictures {
+	overflow: hidden;
+	overflow-y: scroll;
+	border: 2px solid green;
+	height:400px;
+	width: 400px;
+	align-self: center;
+}
+
+.insta-caption {
+	text-align: center;
+}
+
+.social {
+}
+
+.social-items {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.social-items li {
+	padding: 5px;
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+	a:hover{
+		color: red;
+	}
+}
+
+.spotify {
+	align-self: center;
+}
+
+.footer {
+	border-top: 1px solid #ff3232;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.footer-content {
+	padding: 1em;
+	flex: 0 0 100%;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 568px) {
+
+	.main-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.spotify {
+		order: 0;
+	}
+
+	.spotify iframe {
+		width: 300px;
+		height: 380px;
+	}
+
+	.pictures {
+		order: 1;
+	}
+	
+	.picture .thumbnail {
+		width: 200px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
