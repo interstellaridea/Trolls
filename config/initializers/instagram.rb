@@ -5,4 +5,4 @@
  end
 
  
-CALLBACK_URL = "http://localhost:3000/session/callback"
+CALLBACK_URL = Rails.application.secrets.INSTA_CALL_BACK
