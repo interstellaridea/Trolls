@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 #added by me:
 gem 'font-awesome-rails'
 
+gem 'instagram', '~> 1.1', '>= 1.1.6'
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -36,7 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 	gem 'meta_request'
-	gem 'rails-pry'
+  gem 'pry-rails', '~> 0.3.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end

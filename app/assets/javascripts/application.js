@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+
+$(document).ready(function() {
+
+	//var $social_items = $('.social-items');
+	$('.social-items').children().hide().fadeIn(2000);
+});
