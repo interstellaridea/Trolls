@@ -23,7 +23,8 @@
 </div>
 
 <div class="main-content">
-	<div class="pictures">
+
+<div class="pictures">
 		<% @recent_media_items.each do |media| %>
 			<div class="thumbnail">
 				<img src="<%= media.images.standard_resolution.url%>">

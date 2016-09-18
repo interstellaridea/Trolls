@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #added by me:
 gem 'font-awesome-rails'
 
+gem 'httparty', '~> 0.14.0'
 gem 'instagram', '~> 1.1', '>= 1.1.6'
 gem 'bootstrap-sass', '~> 3.3.6'
 

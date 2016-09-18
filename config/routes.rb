@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root :to => "sessions#connect"
-	get 'welcome/index'
 
-  get 'session/:action', :to => 'sessions'
+  root 'welcome#index'
+
+  get 'oauth/connect', to: 'instagram#connect', as: 'insta_connect'
+  get 'oauth/instagram/callback', to: 'instagram#callback'
 end
