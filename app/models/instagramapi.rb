@@ -4,7 +4,4 @@ class Instagramapi
 		url = %W{#{Instagram.endpoint} #{endpoint_to_make} access_token= #{sesh_token}}.join()
 	end
 
-	def self.callback_uri
-		Rails.application.secrets.INSTA_CALLBACK_URL
-	end
 end
