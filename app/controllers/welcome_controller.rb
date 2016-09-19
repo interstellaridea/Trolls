@@ -1,17 +1,21 @@
 class WelcomeController < ApplicationController
-  def index
-  	redirect_to :controller => 'instagram', :action => 'connect' if !session[:access_token]
+	
+	def index
+	end
 
-  	client = Instagram.client(:access_token => session[:access_token])
-    @user = client.user
-    @recent_media_items = client.user_recent_media
+	def show
+		@media = get_recent_media
+	end
 
-  end
+	def get_recent_media
+		url = Instagramapi.endpoint_maker('users/3258608139/media/recent/?', session[:access_token])
+		feed_response = HTTParty.get(url).parsed_response
+		create_structure feed_response['data']
+		# @time = Benchmark.realtime {create_structure(feed_response['data']) }
+	end
 
-  def show
-  end
-
-
-
+	def create_structure(items = [])
+		items.collect{ |x| OpenStruct.new x.to_h }
+	end
 
 end

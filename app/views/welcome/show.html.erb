@@ -1,1 +1,53 @@
-<%= binding.pry %>
+<div class="flexcontainer">
+
+	<div class="header">
+	
+	</div>
+
+	<div class="social">
+			<ul class="social-items">
+			<li>
+				<iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:4DKD9ybSnAQVYkE8L5sJXk&size=basic&theme=light&show-count=0" width="95" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+			</li>
+				<li><a href="#">
+							<i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+						</a>
+				</li>
+
+				<li><a href="#">
+							<i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+						</a>
+				</li>
+			</ul>
+	</div>
+
+	<div class="main-content">
+
+	<div class="pictures">
+		<% if @media.blank? %>
+			<%= link_to 'log to instagram', insta_connect_path %>
+		<% else %>
+			<% @media.each do |moment| %>
+				<div class='thumbnail'>
+					<a href="<%= moment.link %>" target="_blank"><img src="<%= moment.images['low_resolution']['url'] %>"></a>
+					<div class="caption">
+						<% unless moment.caption.blank? %>
+							<p class="insta-caption"><%= moment.caption['text']%></p>
+							<p class="insta-caption"><%= time_ago_in_words(Time.at moment.caption['created_time'].to_i) %></p>
+							<p class="insta-caption"><i class="fa fa-heart"></i><%= moment.likes['count'] %></p>
+						<% else %>
+							<small></small>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+		<div class="spotify">
+				<div class="albumn-link">
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A4pcId5FbaIfoNEw32SYn9h&theme=white" width="550" height="400" frameborder="0" allowtransparency="true"></iframe>
+				</div>
+		</div>
+	</div>
+</div>

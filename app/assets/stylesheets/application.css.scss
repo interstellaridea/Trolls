@@ -30,7 +30,14 @@ body{
 }
 
 .header {
+	margin-top: .5em;
 	align-self: center;
+	background-image: asset-url("TOA_logo.png");
+	background-size: cover;
+	background-position: center;
+	min-width: 100%;
+	min-height: 285px;
+
 }
 
 .logo {
@@ -39,7 +46,9 @@ body{
 }
 
 .main-content {
-	border: 2px solid red;
+	padding: 1em;
+	background-color: #eee;
+	border-radius: 3px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -88,7 +97,6 @@ body{
 }
 
 .footer {
-	border-top: 1px solid #ff3232;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
