@@ -10,8 +10,9 @@ class InstagramController < ApplicationController
 
 	def callback
 		response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-		instagram[:access_token] = response.access_token
-		instagram[:code] = response.code
+		session[:access_token] = response.access_token
+		
+		session[:code] = response.code
 
 		redirect_to :controller => 'welcome', :action => 'show'
 	end
