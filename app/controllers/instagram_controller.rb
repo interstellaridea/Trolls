@@ -5,7 +5,7 @@ require 'ostruct'
 class InstagramController < ApplicationController
 
 	def connect
-		redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL , :scope => 'public_content')
+		redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL, :scope => 'public_content')
 	end
 
 	def callback
