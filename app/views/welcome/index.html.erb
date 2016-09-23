@@ -1,8 +1,6 @@
 <div class="flexcontainer">
 
-	<div class="header">
-		<%= image_tag('TOA_logo.png', :class => "logo") %>
-	</div>
+	<div class="header"></div>
 
 	<div class="social">
 			<ul class="social-items">
@@ -25,7 +23,7 @@
 
 	<div class="pictures">
 			<% if @media.blank? %>
-				<%= link_to 'log to instagram', insta_connect_path %>
+				<%= link_to 'log to instagram', insta_connect_path, class: 'btn btn-info', id: "insta-btn" %>
 			<% else %>
 				<%= binding.pry %>
 			<% end %>
